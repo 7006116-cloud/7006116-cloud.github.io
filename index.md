@@ -1,6 +1,6 @@
 # CS30 Work
 
 ## Demos
-- I'll link to demo here.
+- [Moving square](FIRST DAY)
 ## Assignments
 - Add asignment here.
