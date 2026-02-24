@@ -1,6 +1,6 @@
 # CS30 Work
 
-##Demos
+**Demos
 - I'll link to demo here.
-##Assignments
+**Assignments
 - Add asignment here.
