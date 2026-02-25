@@ -16,10 +16,24 @@ let knightimg;
 let bishopimg;
 let rookimg;
 
+let white_king_pos;
+
+
 function setup() {
+  pawnimg = loadImage("assets/pawn.png");
+  kingimg = loadImage("assets/king.png");
+  queenimg = loadImage("assets/queen.png");
+  knightimg = loadImage("assets/knight.png");
+  bishopimg = loadImage("assets/bishop.png");
+  rookimg = loadImage("assets/rook.png");
+  
+}
+
+function draw() {
+
+
   createCanvas(windowWidth, windowHeight);
   square_size = height / 8;
-  // kingimg = image("/assets/king.png");
   for (let row = 0; row < 8; row++) {
     for (let col = 0; col < 8; col++) {
       if ((row + col) % 2 === 0) {
@@ -30,9 +44,9 @@ function setup() {
       rect(col * square_size, row * square_size, square_size, square_size);
     }
   }
-}
+  image(kingimg,0,0,square_size,square_size);
 
-function draw() {
+
 }
 
 
