@@ -1,8 +1,7 @@
 # CS30 Work
 
 ## Demos
-- [Moving square](FIRST DAY)
+- [stuff](stuff)
 ## Assignments
 - Add asignment here.
 - [interactive scene](interactive_assi)
-- [stuff](stuff)
