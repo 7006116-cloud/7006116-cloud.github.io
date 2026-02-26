@@ -30,10 +30,18 @@ function setup() {
 }
 
 function draw() {
-
-
   createCanvas(windowWidth, windowHeight);
-  square_size = height / 8;
+  check_widthorheight();
+
+  draw_board();
+  
+  
+  image(kingimg,0,0,square_size,square_size);
+
+
+}
+
+function draw_board(){
   for (let row = 0; row < 8; row++) {
     for (let col = 0; col < 8; col++) {
       if ((row + col) % 2 === 0) {
@@ -44,12 +52,16 @@ function draw() {
       rect(col * square_size, row * square_size, square_size, square_size);
     }
   }
-  image(kingimg,0,0,square_size,square_size);
-
-
 }
 
-
+function check_widthorheight(){
+  if (height < width){
+    square_size = height / 8;
+  }
+  else{
+    square_size = width /8;
+  }
+}
 
 
 
