@@ -15,33 +15,45 @@ let queenimg;
 let knightimg;
 let bishopimg;
 let rookimg;
+let all_pieces = [];
 
 let white_king_pos;
-
-
-function setup() {
+function preload(){
   pawnimg = loadImage("assets/pawn.png");
   kingimg = loadImage("assets/king.png");
   queenimg = loadImage("assets/queen.png");
   knightimg = loadImage("assets/knight.png");
   bishopimg = loadImage("assets/bishop.png");
   rookimg = loadImage("assets/rook.png");
-  
+
+  king = image(kingimg,0,0,square_size,square_size);
+  pawn = image(pawnimg,0,0,square_size,square_size);
+  queen = image(queenimg,0,0,square_size,square_size);
+  knight = image(knightimg,0,0,square_size,square_size);
+  bishop = image(bishopimg,0,0,square_size,square_size);
+  rook = image(rookimg,0,0,square_size,square_size);
+}
+
+function setup() {
 }
 
 function draw() {
   createCanvas(windowWidth, windowHeight);
+
   check_widthorheight();
+
   draw_board();
   
   make_board();
-  
+  king;
 
 
 }
 
 function make_board(){
-  image(kingimg,0,0,square_size,square_size);
+  
+
+  
 }
 
 
