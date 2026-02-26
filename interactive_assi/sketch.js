@@ -32,14 +32,19 @@ function setup() {
 function draw() {
   createCanvas(windowWidth, windowHeight);
   check_widthorheight();
-
   draw_board();
   
+  make_board();
   
-  image(kingimg,0,0,square_size,square_size);
 
 
 }
+
+function make_board(){
+  image(kingimg,0,0,square_size,square_size);
+}
+
+
 
 function draw_board(){
   for (let row = 0; row < 8; row++) {
