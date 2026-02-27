@@ -16,6 +16,7 @@ let knightimg;
 let bishopimg;
 let rookimg;
 let all_pieces = [];
+let board_height;
 
 let white_king_pos;
 function preload(){
@@ -25,16 +26,16 @@ function preload(){
   knightimg = loadImage("assets/knight.png");
   bishopimg = loadImage("assets/bishop.png");
   rookimg = loadImage("assets/rook.png");
+  
 
-  king = image(kingimg,0,0,square_size,square_size);
-  pawn = image(pawnimg,0,0,square_size,square_size);
-  queen = image(queenimg,0,0,square_size,square_size);
-  knight = image(knightimg,0,0,square_size,square_size);
-  bishop = image(bishopimg,0,0,square_size,square_size);
-  rook = image(rookimg,0,0,square_size,square_size);
+  
 }
 
 function setup() {
+  createCanvas(windowWidth, windowHeight);
+  check_widthorheight();
+  make_all_pieces();
+  
 }
 
 function draw() {
@@ -42,20 +43,20 @@ function draw() {
 
   check_widthorheight();
 
-  draw_board();
   
+  draw_board();
   make_board();
-  king;
-
 
 }
 
 function make_board(){
-  
+  for (let item of all_pieces){
+    // image(item.img, item.x,item.y,square_size,square_size);
+    image(item.img, item.x, item.y,square_size,square_size);
+    
+  }
 
-  
 }
-
 
 
 function draw_board(){
@@ -74,13 +75,41 @@ function draw_board(){
 function check_widthorheight(){
   if (height < width){
     square_size = height / 8;
+    board_height = height;
   }
   else{
     square_size = width /8;
+    board_height = width;
   }
 }
 
 
+function make_all_pieces(){
+  // let pawn = (img = pawnimg, x = 0, y = width - width/8);
+  for (let amount = 8; amount >= 0; amount --){
+    print(board_height - board_height * amount);
+    append(all_pieces, {img : pawnimg, x : board_height - board_height / 8 * amount, y :  board_height - board_height / 8 * 2});
+  }
+  
 
+  // let king = (img = kingimg, x = 0, y = width - width/8);
+  append(all_pieces, {img : kingimg, x : 0, y : 0 });
+
+  // let queen = (img = queenimg, x = 0, y = width - width/8);
+  append(all_pieces, {img : queenimg, x : 0, y : 0});
+
+  // let knight = (img = knightimg, x = 0, y = width - width/8);
+  append(all_pieces, {img : knightimg, x : 0, y : 0});
+
+  // let bishop = ;
+  append(all_pieces, {img : bishopimg, x : 0, y : 0});
+
+  // let rook = ;
+  for (let amount = 2; amount >= 0; amount --){
+    append(all_pieces, {img : rookimg, x : 0, y :board_height - board_height / 8});
+  }
+  
+  
+}
 
 
